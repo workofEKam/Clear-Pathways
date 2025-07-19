@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from google import genai
 import re  # Add this at the top of app.py (after other imports) for JSON cleaning
 from google.genai import types
-client = genai.Client(api_key="AIzaSyBOa88NpFud3KdfZOlKsNPQkdqKdQfoOps")
+client = genai.Client(api_key="AIzaSyCEq7JCUJu623XMDtiFRsVm-3MDa-pquW0")
 import json
 app = Flask(__name__)
 
