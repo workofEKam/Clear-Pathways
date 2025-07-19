@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a New Location</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Add a New Location</h1>
+
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label">Location Name</label>
+        <input type="text" class="form-control" name="name" id="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" name="address" id="address" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Accessibility Description (Optional)</label>
+        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="latitude" class="form-label">Latitude (Optional)</label>
+        <input type="number" step="any" class="form-control" name="latitude" id="latitude">
+      </div>
+      <div class="mb-3">
+        <label for="longitude" class="form-label">Longitude (Optional)</label>
+        <input type="number" step="any" class="form-control" name="longitude" id="longitude">
+      </div>
+      <button type="submit" class="btn btn-success">Add Location</button>
+    </form>
+
+    <a href="/" class="btn btn-link mt-3">← Back to Home</a>
+  </div>
+</body>
+</html>

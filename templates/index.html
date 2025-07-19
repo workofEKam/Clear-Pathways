@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clear Pathways | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Poppins', sans-serif;
+      color: #2d3436;
+    }
+
+    .search-section {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .app-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #0984e3;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      background-color: #0984e3;
+      border: none;
+      padding: 10px 24px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0767b3;
+      transform: translateY(-2px);
+    }
+
+    .form-control {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid #dfe6e9;
+    }
+
+    .form-control:focus {
+      border-color: #0984e3;
+      box-shadow: 0 0 0 0.25rem rgba(9, 132, 227, 0.25);
+    }
+
+    .btn-outline-secondary {
+      border-radius: 50px;
+      margin: 0 5px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-secondary:hover {
+      transform: scale(1.05);
+    }
+
+    .text-muted {
+      color: #636e72 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="search-section">
+      <h1 class="app-title mb-4 text-center">Clear Pathways</h1>
+      <p class="text-center text-muted">Check or leave accessibility reviews for public places.</p>
+
+      <div class="text-center mb-4">
+        <a href="/add_location" class="btn btn-primary" role="button">Add Location</a>
+      </div>
+
+      <form action="/search" method="post" role="search" aria-label="Search for locations">
+        <div class="mb-3">
+          <label for="location" class="form-label">Enter Location Name</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            class="form-control"
+            placeholder="e.g. Cafe Example"
+            required
+            aria-describedby="searchHelp">
+          <div id="searchHelp" class="form-text">Try full names for best results.</div>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg" aria-label="Search location">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<!-- Accessibility Controls -->
+<div class="text-center mt-4 mb-5" role="region" aria-label="Accessibility options">
+  <button onclick="changeFontSize(1.1)" class="btn btn-outline-secondary" aria-label="Increase text size">A+</button>
+  <button onclick="changeFontSize(0.9)" class="btn btn-outline-secondary" aria-label="Decrease text size">A-</button>
+  <button onclick="resetFontSize()" class="btn btn-outline-secondary" aria-label="Reset text size">Reset</button>
+</div>
+<elevenlabs-convai agent-id="agent_01k0h22x05eyvr63xqjbg11xz5"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<script>
+  let currentFontSize = 1;  // Default scale
+
+  function changeFontSize(factor) {
+    currentFontSize *= factor;
+    document.body.style.fontSize = `${currentFontSize}em`;
+    document.body.style.transition = 'font-size 0.3s ease';
+  }
+
+  function resetFontSize() {
+    currentFontSize = 1;
+    document.body.style.fontSize = '1em';
+  }
+</script>
+
+</html>
